@@ -12,7 +12,7 @@ type LineWriter struct {
 var lf = []byte("\n")
 
 func (l *LineWriter) Write(p []byte) (n int, err error) {
-	for _, line := range bytes.SplitAfter(p, lf) {
+	for _, line := range bytes.Split(p, lf) {
 		var written int
 		written, err = l.w.Write(line)
 		n += written
